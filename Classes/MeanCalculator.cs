@@ -42,7 +42,7 @@ namespace Task_1.Classes
         {
             for (int i = 0;  i < entries.Count; i++)
             {
-                Console.WriteLine($"Entry {i + 1}: {entries[i]}");
+                Console.WriteLine($"Entry {i + 1}: {entries[i]:0.00}");
             }
         }
     }

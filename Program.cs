@@ -76,7 +76,7 @@ namespace Task_1
                 }
                 Console.Clear();
 
-                Console.WriteLine($"Thank you, you have inputted the following numbers, with mean of {calculator.get_mean()}:");
+                Console.WriteLine($"Thank you, you have inputted the following numbers, with mean of {calculator.get_mean():0.00}:");
                 calculator.display_entries();
                 calculator = null; //Reset calculator.
 
