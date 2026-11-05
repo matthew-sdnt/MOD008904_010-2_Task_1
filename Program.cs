@@ -59,25 +59,26 @@ namespace Task_1
         {
             //MOD008904 010-2 Task 1 - Mean Number Calculator
             //Variables
-            MeanCalculator calculator;
-            int number_of_inputs;
+            MeanCalculator calculator; //Uninitialised as it will be reinitialised on every loop start.
+            int number_of_inputs; //Uninitialised as it will be reinitialised on every loop start.
 
             //Logic
             Console.WriteLine("Mean Calculator");
 
-            while (true)
+            while (true) //Program will reloop after an average has been calculated indefinitely, meaning multiple sets can have their mean calculated in one session.
             {
-                calculator = new MeanCalculator();
+                calculator = new MeanCalculator(); //Setup the calculator instance.
                 number_of_inputs = input_greater_than_zero_int("How long is the list of numbers you are calculating the mean of?\nLength: ");
                 Console.Clear();
-                for (int i = 0; i < number_of_inputs; i++)
+                for (int i = 0; i < number_of_inputs; i++) //Loop until all inputs are taken.
                 {
-                    calculator.add_entry(input_double($"Number {i + 1}: "));
+                    calculator.add_entry(input_double($"Number {i + 1}: ")); //Using the behaviour of the MeanCalculator class to ensure everything goes correctly within the class.
                 }
                 Console.Clear();
 
                 Console.WriteLine($"Thank you, you have inputted the following numbers, with mean of {calculator.get_mean()}:");
                 calculator.display_entries();
+                calculator = null; //Reset calculator.
 
                 Console.WriteLine("Press enter to continue.");
                 Console.ReadLine();

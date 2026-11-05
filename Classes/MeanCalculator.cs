@@ -36,9 +36,9 @@ namespace Task_1.Classes
         }
         public double get_mean() //Returns the mean of the current enties.
         {
-            return total / entries.Count;
+            return total / entries.Count; //This does not need much logic as in the add_entry() behaviour we're already adding the new entry to a running total of the set.
         }
-        public void display_entries()
+        public void display_entries() //Iterate over the list and print its contents.
         {
             for (int i = 0;  i < entries.Count; i++)
             {
